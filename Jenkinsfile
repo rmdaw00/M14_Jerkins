@@ -8,7 +8,7 @@ pipeline {
       agent any
 
       parameters {
-        string(name: 'build', defaultValue: 'maven', description: 'Choose the build type to use')
+        string(name: 'build', defaultValue: 'maven', description: 'Choose the build type to use (\'maven\' or \'gradle\'')
       }
 
       stages {
