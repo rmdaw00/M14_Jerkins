@@ -1,10 +1,16 @@
 package com.calculator;
 
+import com.calculator.gui.GInterface;
+
 public class application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello");
+		
+		Calculator calc = Calculator.getInstance();
+		GInterface.startGUI();
+		GInterface.inputGUI(calc);
+		
+		
 	}
 
 }
