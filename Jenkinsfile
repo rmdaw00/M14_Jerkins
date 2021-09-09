@@ -17,11 +17,15 @@ pipeline {
             if (${params.build == 'maven'}) {
               sh '''
               	mvn install
-              	echo "maven" > build.txt 	
+              	echo "maven" > build.txt 
+              	echo "maven added to build.txt"	
               '''
               echo "maven" > build.txt 
              } else {
-              sh 'echo "gradle" > build.txt'
+              sh '''echo "gradle" > build.txt
+              
+              echo "gradle added to build.txt"
+              '''
               
              }
              
