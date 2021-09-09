@@ -16,7 +16,6 @@ pipeline {
           steps {
             if (${params.build == 'maven'}) {
               sh '''
-              	mvn install
               	echo "maven" > build.txt 
               	echo "maven added to build.txt"	
               '''
