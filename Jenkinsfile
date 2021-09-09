@@ -14,13 +14,14 @@ pipeline {
       stages {
         stage('Staging') {
           steps {
-            //if (${params.build == 'maven'}) {
+            if (${params.build == 'maven'}) {
+              sh '''
+              	mvn install
+              '''
               echo "its maven"
-              //  script {
-              //  log.info 'Starting even build'
-              //  log.warning 'Nothing to do!'
-              //}
-            //}
+             } else {
+              echo "its not maven"
+             }
           }
         }
       }
