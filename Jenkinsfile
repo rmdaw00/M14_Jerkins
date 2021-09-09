@@ -17,12 +17,22 @@ pipeline {
             if (${params.build == 'maven'}) {
               sh '''
               	mvn install
+              	echo "maven" > build.txt 	
               '''
-              echo "its maven"
+              echo "maven" > build.txt 
              } else {
-              echo "its not maven"
+              sh 'echo "gradle" > build.txt'
+              
              }
+             
+           
           }
+        }
+        
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'build.txt', fingerprint: true, onlyIfSuccessful: true
+            }
         }
       }
   }
