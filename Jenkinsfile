@@ -14,8 +14,8 @@ pipeline {
       stages {
         stage('Staging') {
           steps {
-            //if (buildNumber % 2 == 0) {
-              echo "${params.build}"
+            //if (${params.build == 'maven'}) {
+              echo "its maven"
               //  script {
               //  log.info 'Starting even build'
               //  log.warning 'Nothing to do!'

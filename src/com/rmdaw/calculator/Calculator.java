@@ -1,21 +1,21 @@
-package com.calculator;
+package src.com.rmdaw.calculator;
 
 public class Calculator {
 	private int first = 0, second = 0;
 	private String operator = "";
 	private static Calculator instance = null;
-	
+
 	public static Calculator getInstance() {
 		if (instance == null) instance = new Calculator();
 		return instance;
 	}
-	
+
 	private Calculator() {
-		
+
 	}
-	
-	
-	
+
+
+
 
 
 	public int getFirst() {
@@ -42,9 +42,9 @@ public class Calculator {
 	public void setOperator(String operator) {
 		this.operator = operator;
 	}
-	
-	
-	
+
+
+
 	public int compute(String input) throws Exception {
 		String[] operators = "-+*x/".split("");
 		for (String op : operators) {
@@ -55,26 +55,26 @@ public class Calculator {
 				switch(op) {
 					case "-":
 						return first-second;
-					
+
 					case "+":
 						return first+second;
-					
-					
+
+
 					case "/":
 						return first/second;
-						
+
 					case "*":
 					case "x":
-						return first*second;	
-				
+						return first*second;
+
 					default:
 					throw new Exception("Error!");
 				}
 
 			}
 		}
-				
+
 		throw new Exception("Error!");
-	}	
-		
+	}
+
 }

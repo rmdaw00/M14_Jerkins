@@ -1,16 +1,16 @@
-package com.calculator;
+package src.com.rmdaw.calculator;
 
-import com.calculator.gui.GInterface;
+import src.com.rmdaw.calculator.gui.GInterface;
 
 public class application {
 
 	public static void main(String[] args) {
-		
+
 		Calculator calc = Calculator.getInstance();
 		GInterface.startGUI();
 		GInterface.inputGUI(calc);
-		
-		
+
+
 	}
 
 }
